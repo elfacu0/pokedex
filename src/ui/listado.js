@@ -1,9 +1,13 @@
+/* eslint-disable linebreak-style */
 export function actualizarTextoIndicePokemones(texto) {
   const $indice = document.querySelector('#indice');
   $indice.textContent = texto;
 }
 
-export function mostrarListadoPokemones(pokemones, pokemonSeleccionadoCallback = () => {}) {
+export function mostrarListadoPokemones(
+  pokemones,
+  pokemonSeleccionadoCallback = () => {}
+) {
   const $indice = document.querySelector('#indice');
   $indice.innerHTML = '';
 

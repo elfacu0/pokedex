@@ -6,12 +6,12 @@ function crearItemPaginador(texto, url = '#') {
   $link.textContent = texto;
   $link.href = url;
   $link.dataset.pagina = texto;
-
   $item.appendChild($link);
 
   return $item;
 }
 
+// Esta funcion no deberia ser privada?
 export function manejarCambioPagina(e, callbackPaginaSeleccionada) {
   e.preventDefault();
   const { target } = e;
@@ -31,7 +31,7 @@ export default function mostrarPaginador(
   paginaActual,
   urlSiguiente,
   urlAnterior,
-  callbackPaginaSeleccionada = () => {},
+  callbackPaginaSeleccionada = () => {}
 ) {
   const POKEMONES_POR_PAGINA = 20;
   const $paginador = document.querySelector('#paginador');
@@ -51,7 +51,7 @@ export default function mostrarPaginador(
   for (let i = 0; i < totalPaginas; i += 1) {
     const numeroPagina = i + 1;
     const $pagina = crearItemPaginador(numeroPagina);
-    if (i === (paginaActual - 1)) {
+    if (i === paginaActual - 1) {
       $pagina.classList.add('active');
     }
     $paginador.appendChild($pagina);
